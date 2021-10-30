@@ -1,9 +1,11 @@
 import React from "react";
 import "./SingleCard.sass";
 
-function SingleCard({ card, handleChoice, flipped }) {
+function SingleCard({ card, handleChoice, flipped, disabled }) {
   const handleClick = () => {
-    handleChoice(card);
+    if (!disabled) {
+      handleChoice(card);
+    }
   };
 
   return (
